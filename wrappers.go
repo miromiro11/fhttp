@@ -4,7 +4,7 @@ import "net/http"
 
 // StdlibTransport is a wrapper for using net/http transports with fhttp
 type StdlibTransport struct {
-	*Transport
+	Transport RoundTripper
 }
 
 func (txp *StdlibTransport) RoundTrip(stdReq *http.Request) (*http.Response, error) {
@@ -57,7 +57,7 @@ func (txp *StdlibTransport) RoundTrip(stdReq *http.Request) (*http.Response, err
 
 // FHttpTransport is a wrapper for using fhttp transports with net/http
 type FHttpTransport struct {
-	*http.Transport
+	Transport http.RoundTripper
 }
 
 func (txp *FHttpTransport) RoundTrip(fhttpReq *Request) (*Response, error) {
