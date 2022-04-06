@@ -55,7 +55,7 @@ func (txp *StdlibTransport) RoundTrip(stdReq *http.Request) (*http.Response, err
 	return stdResp, nil
 }
 
-// FHttpTransport is a wrapper for using net/http transports with fhttp
+// FHttpTransport is a wrapper for using fhttp transports with net/http
 type FHttpTransport struct {
 	*http.Transport
 }
