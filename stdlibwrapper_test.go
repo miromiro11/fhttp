@@ -1,15 +1,16 @@
-package http
+package http_test
 
 import (
 	"context"
 	"errors"
+	fhttp "github.com/saucesteals/fhttp"
 	"net/http"
 	"testing"
 )
 
 func TestStdlibTransport(t *testing.T) {
-	var txp http.RoundTripper = &StdlibTransport{
-		Transport: &Transport{},
+	var txp http.RoundTripper = &fhttp.StdlibTransport{
+		Transport: &fhttp.Transport{},
 	}
 	ctx, cancel := context.WithCancel(context.Background())
 	cancel() // we expect the request with context to fail immediately

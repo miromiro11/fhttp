@@ -17,7 +17,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/useflyent/fhttp/internal"
+	"github.com/saucesteals/fhttp/internal"
 )
 
 // Issue 15446: incorrect wrapping of errors when server closes an idle connection.
