@@ -9,9 +9,10 @@ package cgi
 import (
 	"bufio"
 	"bytes"
-	"net/http/httptest"
 	"strings"
 	"testing"
+
+	"github.com/saucesteals/fhttp/httptest"
 
 	http "github.com/saucesteals/fhttp"
 )
