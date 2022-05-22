@@ -1,6 +1,11 @@
 package http
 
-import "net/http"
+import (
+	"crypto/tls"
+	"net/http"
+
+	utls "github.com/refraction-networking/utls"
+)
 
 // StdlibTransport is a wrapper for using net/http transports with fhttp
 type StdlibTransport struct {
@@ -27,7 +32,7 @@ func (txp *StdlibTransport) RoundTrip(stdReq *http.Request) (*http.Response, err
 		Trailer:          Header(stdReq.Trailer),
 		RemoteAddr:       stdReq.RemoteAddr,
 		RequestURI:       stdReq.RequestURI,
-		TLS:              stdReq.TLS,
+		TLS:              (*utls.ConnectionState)(stdReq.TLS),
 		Cancel:           stdReq.Cancel,
 		Response:         nil, // cannot assign this field
 		ctx:              stdReq.Context(),
@@ -50,7 +55,7 @@ func (txp *StdlibTransport) RoundTrip(stdReq *http.Request) (*http.Response, err
 		Uncompressed:     resp.Uncompressed,
 		Trailer:          http.Header(resp.Trailer),
 		Request:          stdReq,
-		TLS:              resp.TLS,
+		TLS:              (*tls.ConnectionState)(resp.TLS),
 	}
 	return stdResp, nil
 }
@@ -80,7 +85,7 @@ func (txp *FHttpTransport) RoundTrip(fhttpReq *Request) (*Response, error) {
 		Trailer:          http.Header(fhttpReq.Trailer),
 		RemoteAddr:       fhttpReq.RemoteAddr,
 		RequestURI:       fhttpReq.RequestURI,
-		TLS:              fhttpReq.TLS,
+		TLS:              (*tls.ConnectionState)(fhttpReq.TLS),
 		Cancel:           fhttpReq.Cancel,
 		Response:         nil, // cannot assign this field
 	}
@@ -104,7 +109,7 @@ func (txp *FHttpTransport) RoundTrip(fhttpReq *Request) (*Response, error) {
 		Uncompressed:     resp.Uncompressed,
 		Trailer:          Header(resp.Trailer),
 		Request:          fhttpReq,
-		TLS:              resp.TLS,
+		TLS:              (*utls.ConnectionState)(resp.TLS),
 	}
 	return stdResp, nil
 }
