@@ -2,19 +2,20 @@ package http2_test
 
 import (
 	"bytes"
-	"crypto/tls"
 	"crypto/x509"
 	"errors"
 	"fmt"
-	"github.com/saucesteals/fhttp/cookiejar"
-	"github.com/saucesteals/fhttp/httptest"
-	"golang.org/x/net/publicsuffix"
 	"log"
 	ghttp "net/http"
 	"net/url"
 	"os"
 	"strings"
 	"testing"
+
+	tls "github.com/refraction-networking/utls"
+	"github.com/saucesteals/fhttp/cookiejar"
+	"github.com/saucesteals/fhttp/httptest"
+	"golang.org/x/net/publicsuffix"
 
 	http "github.com/saucesteals/fhttp"
 	"github.com/saucesteals/fhttp/http2"

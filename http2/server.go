@@ -29,7 +29,6 @@ import (
 	"bufio"
 	"bytes"
 	"context"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"io"
@@ -45,6 +44,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	tls "github.com/refraction-networking/utls"
 
 	http "github.com/saucesteals/fhttp"
 	"github.com/saucesteals/fhttp/http2/hpack"

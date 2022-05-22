@@ -11,7 +11,6 @@ import (
 	"compress/gzip"
 	"crypto/rand"
 	"crypto/sha1"
-	"crypto/tls"
 	"fmt"
 	"hash"
 	"io"
@@ -27,6 +26,8 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	tls "github.com/refraction-networking/utls"
 
 	. "github.com/saucesteals/fhttp"
 	"github.com/saucesteals/fhttp/httptest"

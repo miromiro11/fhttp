@@ -8,7 +8,6 @@ import (
 	"bufio"
 	"bytes"
 	"context"
-	"crypto/tls"
 	"crypto/x509"
 	"encoding/pem"
 	"errors"
@@ -31,6 +30,8 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	tls "github.com/refraction-networking/utls"
 
 	http "github.com/saucesteals/fhttp"
 	"github.com/saucesteals/fhttp/http2/hpack"

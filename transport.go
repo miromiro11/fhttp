@@ -17,10 +17,8 @@ import (
 	"compress/zlib"
 	"container/list"
 	"context"
-	"crypto/tls"
 	"errors"
 	"fmt"
-	"github.com/andybalholm/brotli"
 	"io"
 	"log"
 	"net"
@@ -32,6 +30,9 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/andybalholm/brotli"
+	tls "github.com/refraction-networking/utls"
 
 	"github.com/saucesteals/fhttp/httptrace"
 
@@ -167,10 +168,15 @@ type Transport struct {
 	DialTLS func(network, addr string) (net.Conn, error)
 
 	// TLSClientConfig specifies the TLS configuration to use with
-	// tls.Client.
+	// tls.UClient.
 	// If nil, the default configuration is used.
 	// If non-nil, HTTP/2 support may not be enabled by default.
 	TLSClientConfig *tls.Config
+
+	// TlsClientHelloSpec specifies the TLS spec to use with
+	// tls.UClient.
+	// If nil, the default configuration is used.
+	TlsClientHelloSpec *tls.ClientHelloSpec
 
 	// TLSHandshakeTimeout specifies the maximum amount of time waiting to
 	// wait for a TLS handshake. Zero means no timeout.
@@ -1514,7 +1520,17 @@ func (pconn *persistConn) addTLS(name string, trace *httptrace.ClientTrace) erro
 		cfg.NextProtos = nil
 	}
 	plainConn := pconn.conn
-	tlsConn := tls.Client(plainConn, cfg)
+	var tlsConn *tls.UConn
+
+	if pconn.t.TlsClientHelloSpec != nil {
+		tlsConn = tls.UClient(plainConn, cfg, tls.HelloCustom)
+		if err := tlsConn.ApplyPreset(pconn.t.TlsClientHelloSpec); err != nil {
+			return err
+		}
+	} else {
+		tlsConn = tls.UClient(plainConn, cfg, tls.HelloGolang)
+	}
+
 	errc := make(chan error, 2)
 	var timer *time.Timer // for canceling TLS handshake
 	if d := pconn.t.TLSHandshakeTimeout; d != 0 {

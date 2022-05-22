@@ -9,7 +9,6 @@ import (
 	"compress/gzip"
 	"compress/zlib"
 	"context"
-	"crypto/tls"
 	"errors"
 	"flag"
 	"fmt"
@@ -27,6 +26,8 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	tls "github.com/refraction-networking/utls"
 
 	http "github.com/saucesteals/fhttp"
 	"github.com/saucesteals/fhttp/httptest"

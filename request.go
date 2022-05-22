@@ -10,7 +10,6 @@ import (
 	"bufio"
 	"bytes"
 	"context"
-	"crypto/tls"
 	"encoding/base64"
 	"errors"
 	"fmt"
@@ -24,6 +23,8 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	tls "github.com/refraction-networking/utls"
 
 	"github.com/saucesteals/fhttp/httptrace"
 

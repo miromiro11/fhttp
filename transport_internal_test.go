@@ -8,7 +8,6 @@ package http
 
 import (
 	"bytes"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"io"
@@ -16,6 +15,8 @@ import (
 	"net"
 	"strings"
 	"testing"
+
+	tls "github.com/refraction-networking/utls"
 
 	"github.com/saucesteals/fhttp/internal"
 )

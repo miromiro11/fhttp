@@ -7,8 +7,9 @@
 package http2
 
 import (
-	"crypto/tls"
 	"sync"
+
+	tls "github.com/refraction-networking/utls"
 
 	http "github.com/saucesteals/fhttp"
 )
