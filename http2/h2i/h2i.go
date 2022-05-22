@@ -102,7 +102,7 @@ func withoutPort(addr string) string {
 // h2i is the app's state.
 type h2i struct {
 	host   string
-	tc     *tls.Conn
+	tc     *tls.UConn
 	framer *http2.Framer
 	term   *term.Terminal
 

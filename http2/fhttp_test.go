@@ -2,6 +2,7 @@ package http2_test
 
 import (
 	"bytes"
+	gtls "crypto/tls"
 	"crypto/x509"
 	"errors"
 	"fmt"
@@ -215,7 +216,7 @@ func TestGClient_Load(t *testing.T) {
 		Transport: &ghttp.Transport{
 			ForceAttemptHTTP2: true,
 			Proxy:             ghttp.ProxyURL(u),
-			TLSClientConfig: &tls.Config{
+			TLSClientConfig: &gtls.Config{
 				RootCAs: pool,
 			},
 		},

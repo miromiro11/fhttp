@@ -226,8 +226,8 @@ func TestTransportBodyAltRewind(t *testing.T) {
 	roundTripped := false
 	tr := &Transport{
 		DisableKeepAlives: true,
-		TLSNextProto: map[string]func(string, *tls.Conn) RoundTripper{
-			"foo": func(authority string, c *tls.Conn) RoundTripper {
+		TLSNextProto: map[string]func(string, *tls.UConn) RoundTripper{
+			"foo": func(authority string, c *tls.UConn) RoundTripper {
 				return roundTripFunc(func(r *Request) (*Response, error) {
 					n, _ := io.Copy(io.Discard, r.Body)
 					if n == 0 {

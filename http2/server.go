@@ -279,9 +279,9 @@ func ConfigureServer(s *http.Server, conf *Server) error {
 	}
 
 	if s.TLSNextProto == nil {
-		s.TLSNextProto = map[string]func(*http.Server, *tls.Conn, http.Handler){}
+		s.TLSNextProto = map[string]func(*http.Server, *tls.UConn, http.Handler){}
 	}
-	protoHandler := func(hs *http.Server, c *tls.Conn, h http.Handler) {
+	protoHandler := func(hs *http.Server, c *tls.UConn, h http.Handler) {
 		if testHookOnConn != nil {
 			testHookOnConn()
 		}
