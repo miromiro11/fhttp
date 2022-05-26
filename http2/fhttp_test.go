@@ -13,9 +13,9 @@ import (
 	"strings"
 	"testing"
 
-	tls "github.com/refraction-networking/utls"
 	"github.com/saucesteals/fhttp/cookiejar"
 	"github.com/saucesteals/fhttp/httptest"
+	tls "github.com/saucesteals/utls"
 	"golang.org/x/net/publicsuffix"
 
 	http "github.com/saucesteals/fhttp"

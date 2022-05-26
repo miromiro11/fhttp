@@ -16,7 +16,7 @@ import (
 	"strings"
 	"testing"
 
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/saucesteals/utls"
 
 	"github.com/saucesteals/fhttp/internal"
 )

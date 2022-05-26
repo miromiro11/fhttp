@@ -27,7 +27,7 @@ import (
 	"testing"
 	"time"
 
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/saucesteals/utls"
 
 	. "github.com/saucesteals/fhttp"
 	"github.com/saucesteals/fhttp/httptest"

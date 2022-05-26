@@ -25,7 +25,7 @@ import (
 	"sync"
 	"time"
 
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/saucesteals/utls"
 
 	"cloud.google.com/go/storage"
 	"github.com/saucesteals/fhttp/http2"

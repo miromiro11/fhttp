@@ -32,7 +32,7 @@ import (
 	"time"
 
 	"github.com/andybalholm/brotli"
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/saucesteals/utls"
 
 	"github.com/saucesteals/fhttp/httptrace"
 

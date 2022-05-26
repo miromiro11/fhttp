@@ -9,7 +9,7 @@ package http2
 import (
 	"sync"
 
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/saucesteals/utls"
 
 	http "github.com/saucesteals/fhttp"
 )
