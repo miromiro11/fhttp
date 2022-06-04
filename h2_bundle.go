@@ -8127,8 +8127,9 @@ func (cc *http2ClientConn) writeHeaders(streamID uint32, endStream bool, maxFram
 
 func (cc *http2ClientConn) requestGzip(req *Request) bool {
 	// TODO(bradfitz): this is a copy of the logic in net/http. Unify somewhere?
+	encoding := req.Header.Get("Accept-Encoding")
 	if !cc.t.disableCompression() &&
-		req.Header.Get("Accept-Encoding") == "" &&
+		(encoding == "" || strings.Contains(encoding, "gzip")) &&
 		req.Header.Get("Range") == "" &&
 		req.Method != "HEAD" {
 		// Request gzip only, not deflate. Deflate is ambiguous and
