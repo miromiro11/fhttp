@@ -1511,7 +1511,6 @@ func (t *Transport) decConnsPerHost(key connectMethodKey) {
 // tunnel, this function establishes a nested TLS session inside the encrypted channel.
 // The remote endpoint's name may be overridden by TLSClientConfig.ServerName.
 func (pconn *persistConn) addTLS(name string, trace *httptrace.ClientTrace) error {
-	fmt.Printf("adding tls to pconn with local addr %s\n", pconn.conn.LocalAddr().String())
 	// Initiate TLS and check remote host name against certificate.
 	cfg := cloneTLSConfig(pconn.t.TLSClientConfig)
 	if cfg.ServerName == "" {
