@@ -173,10 +173,10 @@ type Transport struct {
 	// If non-nil, HTTP/2 support may not be enabled by default.
 	TLSClientConfig *tls.Config
 
-	// TlsClientHelloSpec specifies the TLS spec to use with
+	// GetTlsClientHelloSpec returns the TLS spec to use with
 	// tls.UClient.
 	// If nil, the default configuration is used.
-	TlsClientHelloSpec *tls.ClientHelloSpec
+	GetTlsClientHelloSpec func() *tls.ClientHelloSpec
 
 	// TLSHandshakeTimeout specifies the maximum amount of time waiting to
 	// wait for a TLS handshake. Zero means no timeout.
@@ -1522,9 +1522,9 @@ func (pconn *persistConn) addTLS(name string, trace *httptrace.ClientTrace) erro
 	plainConn := pconn.conn
 	var tlsConn *tls.UConn
 
-	if pconn.t.TlsClientHelloSpec != nil {
+	if pconn.t.GetTlsClientHelloSpec != nil {
 		tlsConn = tls.UClient(plainConn, cfg, tls.HelloCustom)
-		if err := tlsConn.ApplyPreset(pconn.t.TlsClientHelloSpec); err != nil {
+		if err := tlsConn.ApplyPreset(pconn.t.GetTlsClientHelloSpec()); err != nil {
 			return err
 		}
 	} else {
