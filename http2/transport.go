@@ -1305,7 +1305,7 @@ func (cc *ClientConn) writeHeaders(streamID uint32, endStream bool, maxFrameSize
 				EndHeaders:    endHeaders,
 				Priority: PriorityParam{
 					Exclusive: true,
-					Weight:    219,
+					Weight:    0,
 				},
 			})
 			first = false
