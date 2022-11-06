@@ -16,9 +16,9 @@ import (
 	"strings"
 	"testing"
 
-	tls "github.com/saucesteals/utls"
+	tls "github.com/miromiro11/utls"
 
-	"github.com/saucesteals/fhttp/internal"
+	"github.com/miromiro11/fhttp/internal"
 )
 
 // Issue 15446: incorrect wrapping of errors when server closes an idle connection.

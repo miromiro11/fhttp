@@ -13,13 +13,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/saucesteals/fhttp/cookiejar"
-	"github.com/saucesteals/fhttp/httptest"
-	tls "github.com/saucesteals/utls"
+	"github.com/miromiro11/fhttp/cookiejar"
+	"github.com/miromiro11/fhttp/httptest"
+	tls "github.com/miromiro11/utls"
 	"golang.org/x/net/publicsuffix"
 
-	http "github.com/saucesteals/fhttp"
-	"github.com/saucesteals/fhttp/http2"
+	http "github.com/miromiro11/fhttp"
+	"github.com/miromiro11/fhttp/http2"
 )
 
 // Tests if connection settings are written correctly

@@ -21,8 +21,8 @@ import (
 	"strings"
 	"testing"
 
-	. "github.com/saucesteals/fhttp"
-	"github.com/saucesteals/fhttp/httptest"
+	. "github.com/miromiro11/fhttp"
+	"github.com/miromiro11/fhttp/httptest"
 )
 
 func TestQuery(t *testing.T) {

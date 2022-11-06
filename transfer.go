@@ -18,8 +18,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/saucesteals/fhttp/httptrace"
-	"github.com/saucesteals/fhttp/internal"
+	"github.com/miromiro11/fhttp/httptrace"
+	"github.com/miromiro11/fhttp/internal"
 
 	"golang.org/x/net/http/httpguts"
 )

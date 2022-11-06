@@ -37,14 +37,14 @@ import (
 	"testing/iotest"
 	"time"
 
-	tls "github.com/saucesteals/utls"
+	tls "github.com/miromiro11/utls"
 
-	. "github.com/saucesteals/fhttp"
-	"github.com/saucesteals/fhttp/httptest"
-	"github.com/saucesteals/fhttp/httptrace"
-	"github.com/saucesteals/fhttp/httputil"
-	"github.com/saucesteals/fhttp/internal"
-	"github.com/saucesteals/fhttp/internal/nettrace"
+	. "github.com/miromiro11/fhttp"
+	"github.com/miromiro11/fhttp/httptest"
+	"github.com/miromiro11/fhttp/httptrace"
+	"github.com/miromiro11/fhttp/httputil"
+	"github.com/miromiro11/fhttp/internal"
+	"github.com/miromiro11/fhttp/internal/nettrace"
 
 	"golang.org/x/net/http/httpguts"
 )

@@ -27,11 +27,11 @@ import (
 	"testing"
 	"time"
 
-	tls "github.com/saucesteals/utls"
+	tls "github.com/miromiro11/utls"
 
-	. "github.com/saucesteals/fhttp"
-	"github.com/saucesteals/fhttp/httptest"
-	"github.com/saucesteals/fhttp/httputil"
+	. "github.com/miromiro11/fhttp"
+	"github.com/miromiro11/fhttp/httptest"
+	"github.com/miromiro11/fhttp/httputil"
 )
 
 type clientServerTest struct {

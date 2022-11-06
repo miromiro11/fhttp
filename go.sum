@@ -2,8 +2,8 @@ github.com/andybalholm/brotli v1.0.4 h1:V7DdXeJtZscaqfNuAdSRuRFzuiKlHSC/Zh3zl9qY
 github.com/andybalholm/brotli v1.0.4/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=
 github.com/klauspost/compress v1.13.6 h1:P76CopJELS0TiO2mebmnzgWaajssP/EszplttgQxcgc=
 github.com/klauspost/compress v1.13.6/go.mod h1:/3/Vjq9QcHkK5uEr5lBEmyoZ1iFhe47etQ6QUkpK6sk=
-github.com/saucesteals/utls v1.1.2-0.20220526033452-2e6d7376b70a h1:jiEP6CVElK5wDp/e+eoiNopskFQKIQbI9ZvqzGh40cA=
-github.com/saucesteals/utls v1.1.2-0.20220526033452-2e6d7376b70a/go.mod h1:I0obaa60NZ0gTwX8rpbeH6fb18E90q8YlhLdOF0ot0k=
+github.com/miromiro11/utls v1.1.2-0.20220526033452-2e6d7376b70a h1:jiEP6CVElK5wDp/e+eoiNopskFQKIQbI9ZvqzGh40cA=
+github.com/miromiro11/utls v1.1.2-0.20220526033452-2e6d7376b70a/go.mod h1:I0obaa60NZ0gTwX8rpbeH6fb18E90q8YlhLdOF0ot0k=
 golang.org/x/crypto v0.0.0-20211108221036-ceb1ce70b4fa/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
 golang.org/x/crypto v0.0.0-20220518034528-6f7dac969898 h1:SLP7Q4Di66FONjDJbCYrCRrh97focO6sLogHO7/g8F0=
 golang.org/x/crypto v0.0.0-20220518034528-6f7dac969898/go.mod h1:IxCIyHEi3zRg3s0A5j5BB6A9Jmi73HwBIUl50j+osU4=

@@ -17,10 +17,10 @@ import (
 	"sync"
 	"time"
 
-	tls "github.com/saucesteals/utls"
+	tls "github.com/miromiro11/utls"
 
-	http "github.com/saucesteals/fhttp"
-	"github.com/saucesteals/fhttp/internal"
+	http "github.com/miromiro11/fhttp"
+	"github.com/miromiro11/fhttp/internal"
 )
 
 // A Server is an HTTP server listening on a system-chosen port on the

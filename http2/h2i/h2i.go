@@ -35,10 +35,10 @@ import (
 	"strconv"
 	"strings"
 
-	tls "github.com/saucesteals/utls"
+	tls "github.com/miromiro11/utls"
 
-	"github.com/saucesteals/fhttp/http2"
-	"github.com/saucesteals/fhttp/http2/hpack"
+	"github.com/miromiro11/fhttp/http2"
+	"github.com/miromiro11/fhttp/http2/hpack"
 	"golang.org/x/term"
 )
 

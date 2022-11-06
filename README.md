@@ -8,6 +8,7 @@ The package allows for both pseudo header order and normal header order. Most of
 
 **Note on HTTP/1.1 header order**
 Although the header key is capitalized, the header order slice must be in lowercase.
+
 ```go
 	req.Header = http.Header{
 		"X-NewRelic-ID":         {"12345"},
@@ -94,7 +95,7 @@ with
 
 ```go
 import (
-    http "github.com/saucesteals/fhttp"
+    http "github.com/miromiro11/fhttp"
 )
 ```
 
@@ -105,6 +106,7 @@ SHOULD not break anything.
 fhttp user to set custom Content-Length and Transfer-Encoding headers of all types.
 
 ### To set an empty Content-Length header
+
 ```go
 req.Header = http.Header{
 	"Content-Length": {http.ContentLengthEmpty},
@@ -112,6 +114,7 @@ req.Header = http.Header{
 ```
 
 ### To ignore setting the Content-Length header
+
 ```go
 req.Header = http.Header{
     "Content-Length": {http.ContentLengthDelete},
@@ -124,6 +127,6 @@ Any Content-Length or Transfer-Encoding headers set will be prioritized and fhtt
 
 Special thanks to the following people for helping me with this project.
 
-* [cc](https://github.com/x04/) for guiding me when I first started this project and inspiring me with [cclient](https://github.com/x04/cclient)
+- [cc](https://github.com/x04/) for guiding me when I first started this project and inspiring me with [cclient](https://github.com/x04/cclient)
 
-* [umasi](https://github.com/umasii) for being good rubber ducky and giving me tips for http2 headers
+- [umasi](https://github.com/umasii) for being good rubber ducky and giving me tips for http2 headers
